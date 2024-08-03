@@ -4,7 +4,12 @@ namespace Encadenamiento
     {
         static void Main(string[] args)
         {
-            var hechos = new HashSet<string> { "no imprime", "esta encendido" };
+            Console.WriteLine("Ingrese dos hechos:");
+            string var1 = Console.ReadLine();
+            string var2 = Console.ReadLine();
+            var hechos = new HashSet<string> { var1, var2 };
+            //Console.WriteLine(var1);
+            //          hechos.Add(var1);
 
             var reglas = new List<Regla>
             {
@@ -21,7 +26,7 @@ namespace Encadenamiento
                     "revise nivel de tinta"
                     ),
                     new Regla(
-                    new HashSet<string> {"tiene conexion usb","no imprime"},
+                    new HashSet<string> {"esta encendido","tiene conexion usb"},
                     "cambie cable USB"
                     ),
                     new Regla(
