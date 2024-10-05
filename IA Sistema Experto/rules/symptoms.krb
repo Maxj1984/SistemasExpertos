@@ -1,0 +1,27 @@
+# symptoms.krb
+
+# Reglas para diagnóstico de enfermedades
+
+# Regla 1: Si el paciente tiene fiebre y tos, entonces puede tener gripe.
+rule gripe:
+    salience 10
+    if
+        symptoms.has_symptom('fiebre') and symptoms.has_symptom('tos')
+    then
+        symptoms.set_diagnosis('gripe')
+
+# Regla 2: Si el paciente tiene dolor de cabeza y fiebre, puede ser migraña.
+rule migraña:
+    salience 5
+    if
+        symptoms.has_symptom('dolor de cabeza') and symptoms.has_symptom('fiebre')
+    then
+        symptoms.set_diagnosis('migraña')
+
+# Regla 3: Si el paciente tiene dolor de garganta, puede ser faringitis.
+rule faringitis:
+    salience 1
+    if
+        symptoms.has_symptom('dolor de garganta')
+    then
+        symptoms.set_diagnosis('faringitis')
